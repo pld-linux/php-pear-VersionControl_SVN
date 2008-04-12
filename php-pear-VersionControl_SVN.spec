@@ -22,8 +22,6 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-What is VersionControl_SVN?
-
 VersionControl_SVN is a simple OO-style interface for Subversion, the
 free/open-source version control system.
 
@@ -51,18 +49,16 @@ VersionControl_SVN is tested against Subversion 1.0.4
 In PEAR status of this package is: %{_status}.
 
 %description -l pl.UTF-8
-Czym jest VersionControl_SVN?
-
 VersionControl_SVN to prosty, obiektowy interfejs do Subversion,
 darmowego systemu kontroli wersji o otwartych źródłach.
 
-VersionControl_SVN może być uzyty do zarządzania drzewami kodów
+VersionControl_SVN może być używany do zarządzania drzewami kodów
 źródłowych, plików tekstowych, grafik -- w zasadzie dowolnego zestawu
 plików.
 
 Niektóre z cech VersionControl_SVN:
 
- - pełne wsparcie do podpoleceń klienta svn,
+ - pełna obsługa podpoleceń klienta svn,
  - możliwość korzystania z elastycznego systemu raportowania błędów
    dzięki wykorzystaniu PEAR_ErrorStack
  - źródła w pełni udokumentowane przy użyciu PHPDoc,
@@ -71,9 +67,10 @@ Niektóre z cech VersionControl_SVN:
 
 Co można zrobić za pomocą VersionConrol_SVN:
 
- - udostępnić kod źródłowy innym developerom lub kierownikowi projektu,
- - stworzenie własnego interfejsu www do repozytorium Subversion,
- - dodanie prawdziwej kontroli wersji do systemu zarządzania treścią!
+ - udostępnić kod źródłowy innym programistom lub kierownikowi
+   projektu,
+ - stworzyć własny interfejs WWW do repozytorium Subversion,
+ - dodać prawdziwą kontrolę wersji do systemu zarządzania treścią!
 
 VersionControl_SVN został przetestowany z Subversion w wersji 1.0.4.
 
