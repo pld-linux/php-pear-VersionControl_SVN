@@ -6,12 +6,12 @@
 Summary:	%{_pearname} - OO wrapper interface for the Subversion command-line client
 Summary(pl.UTF-8):	%{_pearname} - obiektowy interfejs do klienta Subversion
 Name:		php-pear-%{_pearname}
-Version:	0.3.1
-Release:	3
+Version:	0.3.3
+Release:	1
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	ff796598c87b1bcaa404d950c84f8d09
+# Source0-md5:	9d8ca84a3ececa32a2033dd3148ca517
 URL:		http://pear.php.net/package/VersionControl_SVN/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -19,6 +19,7 @@ Requires:	php-pear
 Requires:	php-pear-PEAR-core >= 1:1.4.0
 Requires:	php-pear-XML_Parser >= 1.0.1
 Requires:	subversion
+Obsoletes:	php-pear-VersionControl_SVN-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -77,26 +78,15 @@ VersionControl_SVN został przetestowany z Subversion w wersji 1.0.4.
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-AutoReq:	no
-Requires:	%{name} = %{version}-%{release}
-AutoProv:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
-
 %prep
 %pear_package_setup
 
+mv docs/VersionControl_SVN/docs/examples .
+mv docs/VersionControl_SVN/docs/tutorials examples
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}
+install -d $RPM_BUILD_ROOT{%{php_pear_dir},%{_examplesdir}/%{name}-%{version}}
 %pear_package_install
 
 %clean
@@ -105,11 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install.log
-%doc docs/VersionControl_SVN/docs/{examples,tutorials}
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/VersionControl/SVN
 %{php_pear_dir}/VersionControl/SVN.php
+%{php_pear_dir}/VersionControl/SVN
 
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/VersionControl_SVN/
+%{_examplesdir}/%{name}-%{version}
