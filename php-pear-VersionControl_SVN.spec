@@ -1,22 +1,20 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		VersionControl
-%define		_subclass	SVN
 %define		_status		alpha
 %define		_pearname	VersionControl_SVN
 Summary:	%{_pearname} - OO wrapper interface for the Subversion command-line client
 Summary(pl.UTF-8):	%{_pearname} - obiektowy interfejs do klienta Subversion
 Name:		php-pear-%{_pearname}
 Version:	0.3.3
-Release:	1
+Release:	2
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	9d8ca84a3ececa32a2033dd3148ca517
 URL:		http://pear.php.net/package/VersionControl_SVN/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
-Requires:	php-pear-PEAR-core >= 1:1.4.0
+Requires:	php-pear-PEAR-core >= 1:1.3.1
 Requires:	php-pear-XML_Parser >= 1.0.1
 Requires:	subversion
 Obsoletes:	php-pear-VersionControl_SVN-tests
