@@ -4,14 +4,14 @@
 Summary:	%{_pearname} - OO wrapper interface for the Subversion command-line client
 Summary(pl.UTF-8):	%{_pearname} - obiektowy interfejs do klienta Subversion
 Name:		php-pear-%{_pearname}
-Version:	0.4.0
+Version:	0.5.0
 Release:	1
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	8affc1d2d5fa42e9a2f915e4942bf323
+# Source0-md5:	9e457af3f0bdc87914279e5541c60b40
 URL:		http://pear.php.net/package/VersionControl_SVN/
-BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
+BuildRequires:	php-pear-PEAR >= 1:1.9.4
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear
