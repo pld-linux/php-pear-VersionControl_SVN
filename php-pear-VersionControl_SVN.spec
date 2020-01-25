@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		alpha
 %define		_pearname	VersionControl_SVN
 Summary:	%{_pearname} - OO wrapper interface for the Subversion command-line client
